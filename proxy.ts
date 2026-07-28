@@ -42,5 +42,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|apple-touch-icon.png|og.png|images|fonts).*)"]
+  matcher: ["/((?!api/revalidate/sanity|_next/static|_next/image|favicon.ico|apple-touch-icon.png|og.png|images|fonts).*)"]
 };

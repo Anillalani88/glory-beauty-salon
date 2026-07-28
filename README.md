@@ -13,7 +13,7 @@ This is a Sanity-powered headless website for Glory Beauty Salon, built with Nex
 - Lucide icons
 - Sanity CMS
 - `next-sanity`
-- Vercel-ready environment variables
+- Netlify-ready environment variables
 
 ## Installation
 
@@ -128,6 +128,7 @@ NEXT_PUBLIC_SANITY_DATASET=production
 NEXT_PUBLIC_SANITY_API_VERSION=2026-07-21
 PRIVATE_SITE_USERNAME=
 PRIVATE_SITE_PASSWORD=
+SANITY_REVALIDATE_SECRET=
 ```
 
 ## Password-Protecting the Preview Site
@@ -153,6 +154,37 @@ Site configuration > Environment variables
 
 Then redeploy the site.
 
+## Sanity Publish Webhook
+
+The site uses cached Sanity content in production, then refreshes that cache when Sanity sends a publish webhook.
+
+Set a strong secret locally and in Netlify:
+
+```bash
+SANITY_REVALIDATE_SECRET=choose-a-long-random-secret
+```
+
+In Sanity Manage, create a webhook:
+
+```text
+Project > API > Webhooks > Create webhook
+```
+
+Use these settings:
+
+```text
+Name: Netlify site revalidation
+URL: https://YOUR_NETLIFY_SITE.netlify.app/api/revalidate/sanity
+Dataset: production
+Trigger on: Create, Update, Delete
+Filter: _type in ["salonSettings", "location", "serviceCategory", "service"]
+Projection: {_type}
+HTTP method: POST
+Secret: same value as SANITY_REVALIDATE_SECRET
+```
+
+After saving the webhook, publish a document in Studio and refresh the public site. The edited content should appear without manually clearing the Netlify cache.
+
 ## Sanity CMS Setup
 
 1. Create a free Sanity project.
@@ -174,13 +206,13 @@ npm run sanity:seed:file
 
 This writes `sanity/seed/glory-beauty-salon.ndjson`. Import that file with the Sanity CLI after your project ID and dataset are configured.
 
-## Deploying to Vercel
+## Deploying to Netlify
 
 1. Push the repository to GitHub.
-2. Import the GitHub repository into Vercel.
-3. Add `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SQUARE_BOOKING_URL`, `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, and `NEXT_PUBLIC_SANITY_API_VERSION`.
+2. Import the GitHub repository into Netlify.
+3. Add `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SQUARE_BOOKING_URL`, `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `NEXT_PUBLIC_SANITY_API_VERSION`, `PRIVATE_SITE_USERNAME`, `PRIVATE_SITE_PASSWORD`, and `SANITY_REVALIDATE_SECRET`.
 4. Deploy the project.
-5. Test the Vercel preview URL.
+5. Test the Netlify preview URL.
 6. Add the custom domain after approval.
 7. Configure `www.glorybeautysalon.ca` as the primary domain.
 8. Redirect `glorybeautysalon.ca` to `www.glorybeautysalon.ca`.
