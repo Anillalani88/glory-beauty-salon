@@ -6,6 +6,6 @@ export const sanityClient = isSanityConfigured
       projectId: sanityProjectId,
       dataset: sanityDataset,
       apiVersion: sanityApiVersion,
-      useCdn: process.env.NODE_ENV === "production"
+      useCdn: false
     })
   : null;

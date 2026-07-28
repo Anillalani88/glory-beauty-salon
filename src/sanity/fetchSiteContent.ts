@@ -25,7 +25,7 @@ export async function getSiteContent(): Promise<SiteContent> {
     const remote = await sanityClient.fetch<Partial<SiteContent>>(
       siteContentQuery,
       {siteUrl: salonConfig.siteUrl},
-      {next: {revalidate: process.env.NODE_ENV === "development" ? 0 : 60}}
+      {cache: "no-store"}
     );
 
     return {
