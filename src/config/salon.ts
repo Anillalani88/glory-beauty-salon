@@ -7,6 +7,7 @@ const envContactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim();
 export const salonConfig: SalonConfig = {
   name: "Glory Beauty Salon",
   legalName: "Glory Beauty Salon",
+  heroEyebrow: "Welcome to Glory Beauty Salon",
   tagline:
     "Where beauty embraces wellness, and every visit is a step towards feeling your best.",
   siteUrl: envSiteUrl || "https://www.glorybeautysalon.ca",

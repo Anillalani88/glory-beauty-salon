@@ -3,6 +3,7 @@ export type LocationId = "stoney-creek" | "welland";
 export interface SalonConfig {
   name: string;
   legalName: string;
+  heroEyebrow: string;
   tagline: string;
   siteUrl: string;
   canonicalHost: string;

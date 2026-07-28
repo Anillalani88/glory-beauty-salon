@@ -51,6 +51,7 @@ const docs = [
     _id: "salonSettings",
     _type: "salonSettings",
     name: salonConfig.name,
+    heroEyebrow: salonConfig.heroEyebrow,
     tagline: salonConfig.tagline,
     demoNotice: salonConfig.demoNotice,
     priceNotice: salonConfig.priceNotice,

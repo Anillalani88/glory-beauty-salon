@@ -6,6 +6,7 @@ export const siteContentQuery = groq`{
   "salon": *[_type == "salonSettings"][0]{
     name,
     "legalName": coalesce(name, "Glory Beauty Salon"),
+    heroEyebrow,
     tagline,
     demoNotice,
     priceNotice,

@@ -6,6 +6,12 @@ export const salonSettings = defineType({
   type: "document",
   fields: [
     defineField({name: "name", title: "Salon Name", type: "string", validation: (rule) => rule.required()}),
+    defineField({
+      name: "heroEyebrow",
+      title: "Homepage Eyebrow",
+      description: "Small text shown above the large homepage tagline.",
+      type: "string"
+    }),
     defineField({name: "tagline", title: "Tagline", type: "text", rows: 3}),
     defineField({name: "demoNotice", title: "Demo Notice", type: "string"}),
     defineField({name: "priceNotice", title: "Price Notice", type: "text", rows: 2}),

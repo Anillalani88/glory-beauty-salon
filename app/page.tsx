@@ -46,7 +46,7 @@ export default async function Home() {
         <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-blush/65 lg:block" aria-hidden="true" />
         <div className="container-padded grid min-h-[calc(100svh-118px)] items-center gap-10 py-12 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="relative z-10 max-w-2xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-taupe">Welcome to Glory Beauty Salon</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-taupe">{salon.heroEyebrow}</p>
             <h1 className="mt-5 font-serif text-5xl font-semibold leading-[1.05] text-espresso md:text-7xl">
               {salon.tagline}
             </h1>

@@ -126,7 +126,32 @@ NEXT_PUBLIC_CONTACT_EMAIL=
 NEXT_PUBLIC_SANITY_PROJECT_ID=
 NEXT_PUBLIC_SANITY_DATASET=production
 NEXT_PUBLIC_SANITY_API_VERSION=2026-07-21
+PRIVATE_SITE_USERNAME=
+PRIVATE_SITE_PASSWORD=
 ```
+
+## Password-Protecting the Preview Site
+
+The website includes optional Basic Authentication for private client previews.
+
+To turn it on locally or in Netlify, set both variables:
+
+```bash
+PRIVATE_SITE_USERNAME=client
+PRIVATE_SITE_PASSWORD=choose-a-strong-password
+```
+
+When both values are set, visitors must enter the username and password before viewing the site or opening `/studio`.
+
+To turn password protection off, leave both values blank or remove them from the environment.
+
+In Netlify, add these under:
+
+```text
+Site configuration > Environment variables
+```
+
+Then redeploy the site.
 
 ## Sanity CMS Setup
 
