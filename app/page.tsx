@@ -13,6 +13,9 @@ export const metadata = pageMetadata({
   path: "/"
 });
 
+const googleReviewsUrl =
+  "https://www.google.com/search?sca_esv=2d0f82e09bd2a808&sxsrf=APpeQnvC2D3qV_C9fc1r_X022YZ_TMFHLQ:1785856232170&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_zEwZ3Fm41U_MkgrUMmcGlfMSoaM_eL0MUYlhb3x1iyokPD-d41HRd7c143ssPQdgQ1qVhVNqpFiauu9y9UdX0OeRqRpI0iKr9jBNrMEtfTYBDriGg%3D%3D&q=Glory+Beauty+Salon+Reviews&sa=X&ved=2ahUKEwi1jdryoIeWAxXx4skDHTqSKWQQ0bkNegQIORAH&biw=1280&bih=665&dpr=1.5";
+
 const why = [
   { icon: Sparkles, title: "More than two decades of experience", text: "A beauty journey that began in 2000 and continues with care, consistency and refinement." },
   { icon: Users, title: "Personalized treatments", text: "Services are tailored to each client’s preferences, skin needs and comfort." },
@@ -121,7 +124,7 @@ export default async function Home() {
               </SectionHeading>
               <div className="flex justify-start lg:justify-end">
                 <Link
-                  href={googleReviews.find((review) => review.reviewUrl)?.reviewUrl ?? "https://www.google.com/search?q=Glory+Beauty+Salon+reviews"}
+                  href={googleReviewsUrl}
                   className="focus-ring inline-flex min-h-11 items-center rounded-full border border-espresso/20 bg-cream px-5 py-3 text-sm font-bold text-espresso transition hover:bg-white"
                   target="_blank"
                   rel="noreferrer"
