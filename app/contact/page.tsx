@@ -16,15 +16,18 @@ export default async function ContactPage() {
 
   return (
     <>
-      <section className="container-padded py-14">
-        <SectionHeading eyebrow="Contact Us" title="Connect with Glory Beauty Salon">
-          <p>Use the location details below for calls, directions and appointment booking for Stoney Creek and Welland.</p>
-        </SectionHeading>
+      <section className="bg-[#fffaf7] py-16">
+        <div className="container-padded">
+          <SectionHeading eyebrow="Contact Us" title="Connect with Glory Beauty Salon">
+            <p>Use the location details below for calls, directions and appointment booking for Stoney Creek and Welland.</p>
+          </SectionHeading>
+        </div>
       </section>
-      <section className="container-padded grid gap-6 pb-16 lg:grid-cols-[1.1fr_0.9fr]">
+      <section className="bg-[#fffaf7] pb-20">
+        <div className="container-padded grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-1">
           {locations.map((location) => (
-            <article key={location.id} className="rounded-lg border border-espresso/10 bg-cream p-6 shadow-sm">
+            <article key={location.id} className="rounded-lg border border-[#cfa188]/25 bg-white p-6 shadow-sm">
               <p className="text-sm font-bold uppercase tracking-[0.16em] text-taupe">{location.status}</p>
               <h2 className="mt-2 font-serif text-3xl font-semibold">{location.name}</h2>
               <address className="mt-4 not-italic leading-7 text-espresso/75">
@@ -44,7 +47,7 @@ export default async function ContactPage() {
             </article>
           ))}
         </div>
-        <aside className="rounded-lg bg-espresso p-6 text-cream shadow-soft lg:sticky lg:top-28 lg:self-start">
+        <aside className="rounded-lg bg-[#472d27] p-6 text-[#fffaf7] shadow-soft lg:sticky lg:top-28 lg:self-start">
           <HeartHandshake aria-hidden="true" className="text-neutral" />
           <h2 className="mt-4 font-serif text-3xl font-semibold">Appointments and inquiries</h2>
           <p className="mt-4 leading-7 text-cream/76">
@@ -59,6 +62,7 @@ export default async function ContactPage() {
             <BookingButton label="Book Now" variant="light" bookingUrl={salon.squareBookingUrl} />
           </div>
         </aside>
+        </div>
       </section>
     </>
   );

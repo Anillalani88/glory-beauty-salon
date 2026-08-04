@@ -1,0 +1,31 @@
+<svg width="250" height="72" viewBox="0 0 250 72" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Glory Beauty Salon</title>
+  <desc id="desc">Elegant text logo for Glory Beauty Salon with lines around Salon.</desc>
+  <rect width="250" height="72" fill="none"/>
+  <text
+    x="125"
+    y="33"
+    text-anchor="middle"
+    fill="#472D27"
+    font-family="'Bodoni 72', 'Bodoni MT', Didot, Baskerville, Georgia, serif"
+    font-size="23"
+    font-weight="600"
+    letter-spacing="3.2"
+  >
+    GLORY BEAUTY
+  </text>
+  <line x1="48" y1="52" x2="90" y2="52" stroke="#CFA188" stroke-width="1.2"/>
+  <text
+    x="125"
+    y="57"
+    text-anchor="middle"
+    fill="#CFA188"
+    font-family="'Avenir Next', 'Segoe UI', Arial, sans-serif"
+    font-size="9"
+    font-weight="700"
+    letter-spacing="7"
+  >
+    SALON
+  </text>
+  <line x1="160" y1="52" x2="202" y2="52" stroke="#CFA188" stroke-width="1.2"/>
+</svg>

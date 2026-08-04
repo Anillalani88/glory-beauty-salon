@@ -22,9 +22,9 @@ export function ServicePriceList({
         const categoryServices = getServicesByCategory(content, category.id);
         const featuredService = categoryServices.find((item) => item.featured) ?? categoryServices[0];
         return (
-          <section id={category.slug} key={category.id} className="scroll-mt-32 overflow-hidden rounded-lg border border-espresso/10 bg-cream/75 shadow-sm">
+          <section id={category.slug} key={category.id} className="scroll-mt-32 overflow-hidden rounded-lg border border-[#cfa188]/25 bg-white shadow-sm">
             <div className="grid gap-0 lg:grid-cols-[0.82fr_1.18fr]">
-              <div className="relative min-h-64 border-b border-espresso/10 lg:border-b-0 lg:border-r">
+              <div className="relative min-h-64 border-b border-[#cfa188]/25 lg:border-b-0 lg:border-r">
                 <Image
                   src={category.image}
                   alt={category.imageAlt}
@@ -34,7 +34,7 @@ export function ServicePriceList({
                 />
               </div>
               <div className="p-5 md:p-7">
-                <div className="flex flex-col gap-4 border-b border-espresso/10 pb-5 md:flex-row md:items-start md:justify-between">
+                <div className="flex flex-col gap-4 border-b border-[#cfa188]/25 pb-5 md:flex-row md:items-start md:justify-between">
                   <div>
                     <p className="text-sm font-bold uppercase text-taupe">{category.name}</p>
                     <h2 className="mt-2 font-serif text-3xl font-semibold">{category.name}</h2>
@@ -54,7 +54,7 @@ export function ServicePriceList({
                   {categoryServices.map((item) => {
                     const price = getPriceForLocation(item, locationId);
                     return (
-                      <article key={item.id} className="rounded-lg bg-white/50 p-4">
+                      <article key={item.id} className="rounded-lg border border-[#cfa188]/18 bg-[#fffaf7] p-4">
                         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                           <div className="min-w-0">
                             <h3 className="text-lg font-bold text-espresso">{item.name}</h3>

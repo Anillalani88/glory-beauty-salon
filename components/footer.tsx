@@ -6,8 +6,8 @@ import { Logo } from "@/components/logo";
 
 export function Footer() {
   return (
-    <footer className="border-t border-espresso/10 bg-blush/55">
-      <div className="container-padded grid gap-10 py-12 md:grid-cols-[1.2fr_1fr_1fr]">
+    <footer className="border-t border-[#cfa188]/25 bg-[#fffaf7]">
+      <div className="container-padded grid gap-10 py-14 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <Logo />
           <p className="mt-5 max-w-sm leading-7 text-espresso/75">{salonConfig.tagline}</p>
@@ -37,7 +37,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-espresso/10 px-4 py-5 text-center text-sm text-espresso/65">
+      <div className="border-t border-[#cfa188]/25 px-4 py-5 text-center text-sm text-espresso/65">
         © {new Date().getFullYear()} {salonConfig.name}. All rights reserved.
       </div>
     </footer>

@@ -18,17 +18,19 @@ const sections = [
 
 export default function PrivacyPage() {
   return (
-    <section className="container-padded py-14">
-      <SectionHeading eyebrow="Privacy" title="Clear, simple privacy information">
-        <p>This page is written for the brochure website demo and should be reviewed before final production launch.</p>
-      </SectionHeading>
-      <div className="mt-10 grid gap-5">
-        {sections.map(([title, text]) => (
-          <article key={title} className="rounded-[1.5rem] border border-espresso/10 bg-cream p-6">
-            <h2 className="font-serif text-2xl font-semibold">{title}</h2>
-            <p className="mt-3 leading-7 text-espresso/75">{text}</p>
-          </article>
-        ))}
+    <section className="bg-[#fffaf7] py-16">
+      <div className="container-padded">
+        <SectionHeading eyebrow="Privacy" title="Clear, simple privacy information">
+          <p>This page is written for the brochure website demo and should be reviewed before final production launch.</p>
+        </SectionHeading>
+        <div className="mt-10 grid gap-5">
+          {sections.map(([title, text]) => (
+            <article key={title} className="rounded-lg border border-[#cfa188]/25 bg-white p-6 shadow-sm">
+              <h2 className="font-serif text-2xl font-semibold">{title}</h2>
+              <p className="mt-3 leading-7 text-espresso/75">{text}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

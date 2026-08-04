@@ -3,11 +3,11 @@ import type { ReactNode } from "react";
 
 const styles = {
   primary:
-    "bg-espresso text-cream shadow-soft hover:bg-espresso/90 focus-visible:outline-espresso",
+    "bg-[#472d27] text-[#fffaf7] shadow-sm ring-1 ring-[#472d27]/10 hover:bg-[#5a3931] hover:shadow-soft focus-visible:outline-espresso",
   secondary:
-    "border border-espresso/25 bg-cream text-espresso hover:bg-blush focus-visible:outline-espresso",
+    "border border-[#cfa188]/35 bg-white/55 text-[#472d27] shadow-sm hover:bg-[#f8ede9] hover:shadow-soft focus-visible:outline-espresso",
   light:
-    "border border-cream/35 bg-cream/10 text-cream hover:bg-cream/20 focus-visible:outline-cream"
+    "border border-[#fffaf7]/50 bg-[#fffaf7] text-[#472d27] shadow-sm hover:bg-white hover:shadow-soft focus-visible:outline-cream"
 };
 
 export function ButtonLink({
@@ -25,7 +25,7 @@ export function ButtonLink({
   className?: string;
   ariaLabel?: string;
 }) {
-  const classes = `inline-flex min-h-11 items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 ${styles[variant]} ${className}`;
+  const classes = `inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-[0.03em] transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 ${styles[variant]} ${className}`;
 
   if (external) {
     return (

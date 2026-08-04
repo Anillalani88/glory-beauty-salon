@@ -28,8 +28,9 @@ export default async function AboutPage() {
 
   return (
     <>
-      <section className="container-padded grid gap-10 py-14 lg:grid-cols-[0.9fr_1fr] lg:items-center">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft">
+      <section className="bg-[#fffaf7]">
+        <div className="container-padded grid gap-10 py-16 lg:grid-cols-[0.9fr_1fr] lg:items-center">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-[#cfa188]/25 shadow-soft">
           <Image src="/images/about/about-story.jpg" alt="Warm salon setting representing Glory Beauty Salon's story." fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
         </div>
         <div>
@@ -39,8 +40,9 @@ export default async function AboutPage() {
             With more than two decades of experience in the beauty industry, Glory Beauty Salon began its journey in 2000 with a modest start in a small salon and a dream to create a sanctuary where clients could enjoy beauty treatments in a warm and inviting atmosphere.
           </p>
         </div>
+        </div>
       </section>
-      <section className="bg-blush/55 py-16">
+      <section className="bg-[#f8ede9] py-20">
         <div className="container-padded grid gap-8 lg:grid-cols-2">
           <SectionHeading eyebrow="Our Journey" title="Founded by Rozina and Nazim">
             <p>
@@ -50,7 +52,7 @@ export default async function AboutPage() {
               Nazim brings experience in operations, accounting and management, helping the salon run smoothly so the team can focus on providing beauty services in a serene and welcoming environment.
             </p>
           </SectionHeading>
-          <div className="rounded-[1.5rem] bg-cream p-7 shadow-sm">
+          <div className="rounded-lg border border-[#cfa188]/25 bg-[#fffaf7] p-7 shadow-sm">
             <h2 className="font-serif text-3xl font-semibold">Our Story</h2>
             <p className="mt-4 leading-8 text-espresso/75">
               The team shares a passion for excellence and is committed to creating a haven of relaxation and beauty. Whether clients are seeking a quick wax, a rejuvenating facial or a hydradermabrasion treatment, the goal is to provide exceptional care and beautiful results.
@@ -58,22 +60,26 @@ export default async function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="container-padded py-16">
-        <SectionHeading eyebrow="What Guides Us" title="Beauty, well-being and satisfaction" center />
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {aboutValues.map(([title, text]) => (
-            <article key={title} className="rounded-[1.5rem] border border-espresso/10 bg-cream p-6">
-              <h2 className="font-serif text-2xl font-semibold">{title}</h2>
-              <p className="mt-3 leading-7 text-espresso/72">{text}</p>
-            </article>
-          ))}
+      <section className="bg-[#fffaf7] py-20">
+        <div className="container-padded">
+          <SectionHeading eyebrow="What Guides Us" title="Beauty, well-being and satisfaction" center />
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {aboutValues.map(([title, text]) => (
+              <article key={title} className="rounded-lg border border-[#cfa188]/25 bg-white p-6 shadow-sm">
+                <h2 className="font-serif text-2xl font-semibold">{title}</h2>
+                <p className="mt-3 leading-7 text-espresso/72">{text}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
-      <section className="container-padded pb-16 text-center">
-        <div className="rounded-[2rem] bg-espresso px-6 py-12 text-cream">
+      <section className="bg-[#fffaf7] pb-20 text-center">
+        <div className="container-padded">
+        <div className="rounded-lg bg-[#472d27] px-6 py-12 text-[#fffaf7] shadow-soft">
           <h2 className="font-serif text-4xl font-semibold">Book your next visit</h2>
           <p className="mx-auto mt-4 max-w-2xl leading-7 text-cream/75">Square Appointments will be connected in production so clients can book directly.</p>
           <div className="mt-7"><BookingButton variant="light" /></div>
+        </div>
         </div>
       </section>
     </>

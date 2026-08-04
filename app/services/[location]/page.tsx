@@ -54,7 +54,7 @@ export default async function LocationServicesPage({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <section className="bg-blush/55 py-14">
+      <section className="bg-[#f8ede9] py-16">
         <div className="container-padded">
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-taupe">Services</p>
           <h1 className="mt-3 font-serif text-5xl font-semibold leading-tight md:text-6xl">{location.name} Services</h1>
@@ -65,23 +65,25 @@ export default async function LocationServicesPage({ params }: Props) {
           </div>
         </div>
       </section>
-      <section className="container-padded py-8">
-        <div className="grid gap-4 rounded-[1.5rem] border border-espresso/10 bg-cream p-5 md:grid-cols-2">
+      <section className="bg-[#fffaf7] py-8">
+        <div className="container-padded grid gap-4 rounded-lg border border-[#cfa188]/25 bg-white p-5 shadow-sm md:grid-cols-2">
           <p className="leading-7 text-espresso/75">{content.salon.priceNotice}</p>
           <p className="leading-7 text-espresso/75">{content.salon.womenOnlyNotice}</p>
         </div>
       </section>
-      <nav className="container-padded sticky top-[77px] z-30 overflow-x-auto border-y border-espresso/10 bg-cream/95 py-3 backdrop-blur" aria-label="Service categories">
-        <div className="flex min-w-max gap-2 pr-4">
+      <nav className="sticky top-[82px] z-30 overflow-x-auto border-y border-[#cfa188]/25 bg-[#fffaf7]/95 py-3 backdrop-blur" aria-label="Service categories">
+        <div className="container-padded flex min-w-max gap-2 pr-4">
           {content.categories.map((category) => (
-            <a key={category.id} href={`#${category.slug}`} className="inline-flex min-h-11 items-center rounded-full border border-espresso/10 px-4 py-2 text-sm font-semibold text-espresso/80 hover:bg-blush">
+            <a key={category.id} href={`#${category.slug}`} className="inline-flex min-h-11 items-center rounded-full border border-[#cfa188]/30 bg-white/55 px-4 py-2 text-sm font-semibold text-espresso/80 shadow-sm hover:bg-[#f8ede9]">
               {category.name}
             </a>
           ))}
         </div>
       </nav>
-      <section className="container-padded py-10">
-        <ServicePriceList locationId={location.id as LocationId} content={content} />
+      <section className="bg-[#fffaf7] py-10">
+        <div className="container-padded">
+          <ServicePriceList locationId={location.id as LocationId} content={content} />
+        </div>
       </section>
     </>
   );

@@ -9,18 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#F6F4F0",
-        espresso: "#3B2C24",
-        taupe: "#9D8F83",
-        blush: "#E8DBD2",
-        neutral: "#D1C5BB"
+        cream: "#FFFAF7",
+        espresso: "#472D27",
+        taupe: "#CFA188",
+        blush: "#F8EDE9",
+        neutral: "#E7D3C9"
       },
       fontFamily: {
-        sans: ["var(--font-body)", "Segoe UI", "sans-serif"],
-        serif: ["var(--font-heading)", "Georgia", "serif"]
+        sans: ["var(--font-body)", "Avenir Next", "Segoe UI", "sans-serif"],
+        serif: ["Bodoni 72", "Bodoni MT", "Didot", "Baskerville", "Georgia", "serif"]
       },
       boxShadow: {
-        soft: "0 18px 45px rgba(59, 44, 36, 0.10)"
+        soft: "0 18px 45px rgba(71, 45, 39, 0.12)"
       }
     }
   },

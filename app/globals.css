@@ -4,8 +4,8 @@
 
 :root {
   color-scheme: light;
-  --background: #f6f4f0;
-  --foreground: #3b2c24;
+  --background: #fffaf7;
+  --foreground: #472d27;
 }
 
 * {
@@ -32,7 +32,7 @@ textarea {
 }
 
 ::selection {
-  background: #e8dbd2;
+  background: #f8ede9;
 }
 
 @media (prefers-reduced-motion: reduce) {

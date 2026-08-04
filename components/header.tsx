@@ -29,28 +29,28 @@ export function Header() {
   const close = () => setMobileOpen(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-espresso/10 bg-cream/92 backdrop-blur-xl">
-      <nav className="container-padded flex min-h-[76px] items-center justify-between gap-5" aria-label="Primary navigation">
+    <header className="sticky top-0 z-[100] isolate border-b border-[#cfa188]/25 bg-[#fffaf7]/95 shadow-sm backdrop-blur">
+      <nav className="container-padded flex min-h-[82px] items-center justify-between gap-6" aria-label="Primary navigation">
         <Logo />
-        <div className="hidden items-center gap-7 lg:flex">
-          <Link className="focus-ring rounded-sm text-sm font-semibold text-espresso/80 hover:text-espresso" href="/about">
+        <div className="hidden items-center gap-8 lg:flex">
+          <Link className="focus-ring rounded-sm text-xs font-bold uppercase tracking-[0.18em] text-espresso/72 hover:text-espresso" href="/about">
             About Us
           </Link>
           <div className="group relative">
             <Link
               href="/services"
-              className="focus-ring inline-flex items-center gap-1 rounded-sm text-sm font-semibold text-espresso/80 hover:text-espresso"
+              className="focus-ring inline-flex items-center gap-1 rounded-sm text-xs font-bold uppercase tracking-[0.18em] text-espresso/72 hover:text-espresso"
               aria-haspopup="true"
             >
               Services <ChevronDown aria-hidden="true" size={16} />
             </Link>
             <div className="invisible absolute left-1/2 top-full w-56 -translate-x-1/2 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-              <div className="rounded-2xl border border-espresso/10 bg-cream p-2 shadow-soft">
+              <div className="rounded-lg border border-[#cfa188]/25 bg-[#fffaf7] p-2 shadow-soft">
                 {serviceLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="focus-ring block rounded-xl px-4 py-3 text-sm font-semibold text-espresso/75 hover:bg-blush hover:text-espresso"
+                    className="focus-ring block rounded-md px-4 py-3 text-sm font-semibold text-espresso/75 hover:bg-[#f8ede9] hover:text-espresso"
                   >
                     {link.label}
                   </Link>
@@ -58,7 +58,7 @@ export function Header() {
               </div>
             </div>
           </div>
-          <Link className="focus-ring rounded-sm text-sm font-semibold text-espresso/80 hover:text-espresso" href="/contact">
+          <Link className="focus-ring rounded-sm text-xs font-bold uppercase tracking-[0.18em] text-espresso/72 hover:text-espresso" href="/contact">
             Contact Us
           </Link>
           <BookingButton />
@@ -78,7 +78,7 @@ export function Header() {
         id="mobile-menu"
         className={`lg:hidden ${mobileOpen ? "block" : "hidden"}`}
       >
-        <div className="max-h-[calc(100vh-76px)] overflow-y-auto border-t border-espresso/10 bg-cream px-4 pb-6 pt-2">
+        <div className="max-h-[calc(100vh-82px)] overflow-y-auto border-t border-[#cfa188]/25 bg-[#fffaf7] px-4 pb-6 pt-2">
           <div className="mx-auto flex max-w-xl flex-col gap-2">
             <Link onClick={close} className="focus-ring rounded-2xl px-4 py-4 text-base font-semibold" href="/about">
               About Us
@@ -90,7 +90,7 @@ export function Header() {
               <Link
                 key={link.href}
                 onClick={close}
-                className="focus-ring rounded-2xl bg-blush/60 px-6 py-4 text-base font-semibold"
+                className="focus-ring rounded-2xl bg-[#f8ede9] px-6 py-4 text-base font-semibold"
                 href={link.href}
               >
                 {link.label}
