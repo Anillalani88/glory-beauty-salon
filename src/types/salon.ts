@@ -68,3 +68,15 @@ export interface Service {
   locationPrices: LocationPrice[];
   priceNote?: string;
 }
+
+export interface GoogleReview {
+  id: string;
+  authorName: string;
+  rating: number;
+  reviewText: string;
+  publishedLabel?: string;
+  reviewUrl?: string;
+  locationName?: string;
+  featured: boolean;
+  order: number;
+}

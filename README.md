@@ -177,7 +177,7 @@ Name: Netlify site revalidation
 URL: https://YOUR_NETLIFY_SITE.netlify.app/api/revalidate/sanity
 Dataset: production
 Trigger on: Create, Update, Delete
-Filter: _type in ["salonSettings", "location", "serviceCategory", "service"]
+Filter: _type in ["salonSettings", "location", "serviceCategory", "service", "googleReview"]
 Projection: {_type}
 HTTP method: POST
 Secret: same value as SANITY_REVALIDATE_SECRET
@@ -192,7 +192,7 @@ After saving the webhook, publish a document in Studio and refresh the public si
 3. Add the Sanity project ID to `.env.local`.
 4. Run `npm run dev`.
 5. Open `http://localhost:3000/studio`.
-6. Create or import the Salon Settings, Locations, Service Categories and Services documents.
+6. Create or import the Salon Settings, Locations, Service Categories, Services and Google Review documents.
 
 The site uses Sanity content when `NEXT_PUBLIC_SANITY_PROJECT_ID` is configured. If Sanity is not configured or the CMS is empty, it falls back to the local content files.
 

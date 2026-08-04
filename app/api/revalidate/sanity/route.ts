@@ -6,6 +6,8 @@ type SanityWebhookBody = {
   _type?: string;
 };
 
+const revalidatingDocumentTypes = ["salonSettings", "location", "service", "serviceCategory", "googleReview"];
+
 const pathsToRevalidate = [
   "/",
   "/about",
@@ -36,6 +38,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       revalidated: true,
+      revalidatingDocumentTypes,
       documentType: body?._type ?? "unknown",
       paths: pathsToRevalidate
     });

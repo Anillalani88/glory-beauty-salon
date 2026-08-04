@@ -55,5 +55,16 @@ export const siteContentQuery = groq`{
     featured,
     locationPrices,
     priceNote
+  },
+  "googleReviews": *[_type == "googleReview" && featured == true] | order(order asc, _createdAt desc)[0...6] {
+    "id": _id,
+    authorName,
+    rating,
+    reviewText,
+    publishedLabel,
+    reviewUrl,
+    locationName,
+    featured,
+    order
   }
 }`;

@@ -1,4 +1,4 @@
-import { Heart, Leaf, Sparkles, Users } from "lucide-react";
+import { Heart, Leaf, Sparkles, Star, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { BookingButton } from "@/components/booking-button";
@@ -21,7 +21,7 @@ const why = [
 ];
 
 export default async function Home() {
-  const {salon, categories, locations} = await getSiteContent();
+  const {salon, categories, locations, googleReviews} = await getSiteContent();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
@@ -111,6 +111,51 @@ export default async function Home() {
           </div>
         </SectionHeading>
       </section>
+
+      {googleReviews.length ? (
+        <section className="bg-blush/55 py-16">
+          <div className="container-padded">
+            <div className="grid gap-8 lg:grid-cols-[0.72fr_1fr] lg:items-end">
+              <SectionHeading eyebrow="Google Reviews" title="Kind words from salon guests">
+                <p>Real client feedback selected from Glory Beauty Salon&apos;s Google reviews.</p>
+              </SectionHeading>
+              <div className="flex justify-start lg:justify-end">
+                <Link
+                  href={googleReviews.find((review) => review.reviewUrl)?.reviewUrl ?? "https://www.google.com/search?q=Glory+Beauty+Salon+reviews"}
+                  className="focus-ring inline-flex min-h-11 items-center rounded-full border border-espresso/20 bg-cream px-5 py-3 text-sm font-bold text-espresso transition hover:bg-white"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View on Google
+                </Link>
+              </div>
+            </div>
+            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {googleReviews.map((review) => (
+                <article key={review.id} className="rounded-[1.25rem] border border-espresso/10 bg-cream p-6 shadow-sm">
+                  <div className="flex gap-1 text-taupe" aria-label={`${review.rating} out of 5 stars`}>
+                    {Array.from({length: 5}).map((_, index) => (
+                      <Star
+                        key={index}
+                        size={18}
+                        aria-hidden="true"
+                        className={index < Math.round(review.rating) ? "fill-current" : "text-espresso/20"}
+                      />
+                    ))}
+                  </div>
+                  <blockquote className="mt-5 leading-7 text-espresso/75">&ldquo;{review.reviewText}&rdquo;</blockquote>
+                  <div className="mt-6 border-t border-espresso/10 pt-4">
+                    <p className="font-bold text-espresso">{review.authorName}</p>
+                    <p className="mt-1 text-sm text-espresso/60">
+                      {[review.locationName, review.publishedLabel].filter(Boolean).join(" - ") || "Google review"}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="container-padded py-16">
         <SectionHeading eyebrow="Locations" title="Visit us in Stoney Creek or Welland" />

@@ -37,7 +37,8 @@ export async function getSiteContent(): Promise<SiteContent> {
       salon: mergeSalonConfig(remote.salon),
       locations: remote.locations?.length ? remote.locations : fallbackSiteContent.locations,
       categories: remote.categories?.length ? remote.categories : fallbackSiteContent.categories,
-      services: remote.services?.length ? remote.services : fallbackSiteContent.services
+      services: remote.services?.length ? remote.services : fallbackSiteContent.services,
+      googleReviews: remote.googleReviews?.length ? remote.googleReviews : fallbackSiteContent.googleReviews
     };
   } catch {
     return fallbackSiteContent;
